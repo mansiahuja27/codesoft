@@ -4,11 +4,7 @@
 #include <limits>
 
 int main() {
-    // Seed the random number generator with the current time
-    
     std::srand(static_cast<unsigned>(std::time(nullptr)));
-
-    // Generate a random number between 1 and 100
     int secretNumber = std::rand() % 100 + 1;
 
     int userGuess;
@@ -30,6 +26,7 @@ int main() {
         }
 
         if (userGuess == secretNumber) {
+
             std::cout << "Congratulations! You've guessed the correct number " << secretNumber << " in " << guessCount << " tries!" << std::endl;
             break;
         } else if (userGuess < secretNumber) {
